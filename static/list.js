@@ -1,7 +1,6 @@
 $(document).ready(function(){
     // add item to list-group
-    var btn = $('#enter')
-    btn.click(function() {
+    $('#add').click(function() {
         input = $('#userinput')
         if (input.val() != ''){
             if ($('#hidden_match').val()== 'true'){
@@ -15,9 +14,7 @@ $(document).ready(function(){
 
     });
 
-
-    var btn = $('#getgroc')
-    btn.click(function() {
+    $('#getgroc').click(function() {
         list = $('#list')
         if (list.children().length > 0){
             $('.list-group').append("<li class='list-group-item'>"+input.val()+"</li>");
@@ -27,5 +24,12 @@ $(document).ready(function(){
         }
 
     });
+
+    $('#userinput').on('keyup', function (e) {
+    if (e.keyCode === 13) {
+        $('#add').click();
+    }
+});
+
 
 });
