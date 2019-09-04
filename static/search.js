@@ -17,4 +17,17 @@ $('.typeahead').typeahead({
 {
     name: 'recipes',
     source: recipes
+}).on('change blur', function() {
+        // Force select an item
+        match = false
+
+        $.each(recipes.index.datums, function (i, item) {
+            if ($('#userinput').val() == item.name) {
+                match = true;
+            }
+        });
+
+        if (!match) {
+            $('#userinput').val('');
+        }
 });
