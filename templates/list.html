@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/static/typeahead.css">
+
+<div class="container ">
+    <div class="form-group row justify-center">
+      <div class="col-12">
+        <header><h1>Recipe List</h1></header>
+        <div class="wrapper input-group mb-3">
+          <input id="userinput" type="text" class="typeahead form-control" placeholder="Add a recipe..." required >
+          <div class="input-group-append">
+            <button class="btn btn-info" id="enter" type="button">Add</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12">
+        <ul id="list" class="list-group">
+        </ul>
+      </div>
+
+    </div>
+  <div class="d-flex justify-content-center">
+    <button id="getgroc" class="btn btn-success">Get Grocery List</button>
+  </div>
+</div>
+<script type="text/javascript">
+  recipes = ({{recipes|tojson|safe}})
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='search.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='list.js') }}"></script>

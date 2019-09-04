@@ -1,0 +1,33 @@
+
+import os
+import datetime
+from flask import Flask
+from flask import render_template
+
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def planner():
+    # select RecipeName from RecipeMaster
+    recipe_list = ['Chili',
+                   'Pizza, Homemade',
+                   'Sausage Seasoning',
+                   'Sausage,Hot Italian  Homemade',
+                   'Sauce, Spagetti',
+                   'Taco Meat; Homemade',
+                   'Chili Powder, Homemade',
+                   'Pizza Dough',
+                   'Pancakes,Cornmeal',
+                   'Hamburg and Gravy']
+    return render_template("planner.html",
+                           recipes=recipe_list)
+
+
+if __name__ == "__main__":
+    port = os.environ.get('PORT', 80)
+    if port == '8080':
+        app.run(host='0.0.0.0', port=port, debug=True)
+    else:
+        app.run(host='0.0.0.0', port=port, debug=False)

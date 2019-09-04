@@ -1,0 +1,37 @@
+
+h1 {
+    color: navajowhite;
+    font-variant-caps: all-small-caps;
+    font-size: 46px;
+}
+
+h3 {
+  color: white;
+  font-size: 36px;
+}
+
+li {
+  color: red;
+  /*  font-size: 50px;*/
+}
+
+body {
+    background: firebrick;
+    padding-bottom: 20px;
+
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+canvas {
+    background: white;
+}
+
+#getgroc{
+    width: 50%;
+    font-weight:800;
+    font-size: large;
+    color: ivory;
+}

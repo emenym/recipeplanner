@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Recipe Planner{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block nav_items %}
+    <li class="nav-item">
+        <a class="nav-link" href="chart">Chart</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+  {% include 'list.html' %}
+
+
+
+{% endblock %}
