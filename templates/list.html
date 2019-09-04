@@ -20,7 +20,14 @@
 
     </div>
   <div class="d-flex justify-content-center">
-    <button id="getgroc" class="btn btn-success">Get Grocery List</button>
+    <button
+            onclick='get_groceries("{{ url_for('static', filename='loading.gif') }}")'
+            id="getgroc"
+            class="btn btn-success">
+      Get Grocery List
+    </button>
+<!--      <a href="javascript:get_groceries({{ url_for('static', filename='loading.gif') }});"></a>-->
+
   </div>
 </div>
 <script type="text/javascript">
@@ -28,3 +35,18 @@
 </script>
 <script type="text/javascript" src="{{ url_for('static', filename='search.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='list.js') }}"></script>
+<!--<script>-->
+<!--      $('#getgroc').click(function() {-->
+<!--//        $('#getgroc').html('<img src="{{ url_for("static", filename="loading.gif") }}>');-->
+<!--         $('#getgroc').html('<img src="{{ url_for('static', filename='loading.gif') }}">');-->
+<!--//        $('#getgroc').html('<img src="{{ url_for('static', filename='loading.gif') }}">');-->
+<!--        list = $('#list');-->
+<!--        if (list.children().length > 0){-->
+<!--            $('.list-group').append("<li class='list-group-item'>"+input.val()+"</li>");-->
+<!--            // clear input and typehead-->
+<!--            input.val('');-->
+<!--            $('.typeahead').typeahead('val', '');-->
+<!--        }-->
+
+<!--    });-->
+<!--</script>-->

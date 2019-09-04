@@ -1,8 +1,9 @@
 
 import os
 import datetime
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask import render_template
+import json
 
 
 app = Flask(__name__)
@@ -23,6 +24,13 @@ def planner():
                    'Hamburg and Gravy']
     return render_template("planner.html",
                            recipes=recipe_list)
+
+
+@app.route('/get_groceries', methods=[ 'POST' ] )
+def get_groceries():
+    data = request.get_json()
+    recipes = data['recipes']
+    return jsonify(recipes=data)
 
 
 if __name__ == "__main__":
