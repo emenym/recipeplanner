@@ -22,12 +22,13 @@ $('.typeahead').typeahead({
         match = false
 
         $.each(recipes.index.datums, function (i, item) {
-            if ($('#userinput').val() == item.name) {
+            if ($('#userinput').val() == item) {
                 match = true;
+                return false;
             }
         });
 
-        if (!match) {
-            $('#userinput').val('');
+        if (match) {
+            $('#hidden_match').val('true')
         }
 });

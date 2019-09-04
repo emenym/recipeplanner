@@ -4,10 +4,13 @@ $(document).ready(function(){
     btn.click(function() {
         input = $('#userinput')
         if (input.val() != ''){
-            $('.list-group').append("<li class='list-group-item'>"+input.val()+"</li>");
-            // clear input and typehead
-            input.val('')
-                    $('.typeahead').typeahead('val', '');
+            if ($('#hidden_match').val()== 'true'){
+                $('.list-group').append("<li class='list-group-item'>"+input.val()+"</li>");
+                // clear input and typehead
+                input.val('');
+                $('#hidden_match').val('false')
+                $('.typeahead').typeahead('val', '');
+            }
         }
 
     });
