@@ -49,6 +49,8 @@ canvas {
 #printme {
     height: inherit;
     align-self: center;
+    margin-left: 10px;
+
 }
 
 

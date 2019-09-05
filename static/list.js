@@ -26,18 +26,16 @@ $(document).ready(function(){
     }
     });
 
-    $('.printm| ge').click(function(){
+    $('.printme').click(function(){
          $("#grocerytable").print();
     });
 
 });
 
 function get_groceries(gifurl) {
-//    console.log($('#getgroc').html());
     $('#getgroc').html('<img src ='+gifurl+'>');
     recipelist = [];
     $( "#list li"  ).each(function( index ) {
-//        console.log( index + ": " + $( this ).text() );
         recipelist.push($( this ).text())
     });
 
@@ -50,7 +48,6 @@ function get_groceries(gifurl) {
     success: function(dat) {
 
             $('#getgroc').html('Get Grocery List');
-//            console.log(dat);
             if (jQuery.isEmptyObject(dat.groceries)){
                 $("#userinput").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
                 $("#userinput").focus();
