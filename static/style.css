@@ -11,7 +11,7 @@ h3 {
 }
 
 li {
-  color: red;
+  color: black;
   /*  font-size: 50px;*/
 }
 
@@ -34,4 +34,30 @@ canvas {
     font-weight:800;
     font-size: large;
     color: ivory;
+}
+
+
+#grocerytable tr {
+    background-color: #fff;
+}
+
+#grocerytable td {
+    color: darkblue;
+    font-weight: bold;
+}
+
+#printme {
+    height: inherit;
+    align-self: center;
+}
+
+
+@media print {
+    *, :after, :before {
+      color: #000!important;
+      text-shadow: none!important;
+      background: 0 0!important;
+      -webkit-box-shadow: none!important;
+      box-shadow: none!important;
+    }
 }

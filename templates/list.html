@@ -3,7 +3,7 @@
 <div class="container ">
     <div class="form-group row justify-center">
       <div class="col-12">
-        <header><h1>Recipe List</h1></header>
+        <header><h1><b>Recipe</b> List</h1></header>
         <div class="wrapper input-group mb-3">
           <input id="userinput" type="text" class="typeahead form-control" placeholder="Add a recipe..." required >
           <input id="hidden_match" type="hidden" value="false">
@@ -32,21 +32,7 @@
 </div>
 <script type="text/javascript">
   recipes = ({{recipes|tojson|safe}})
+  var grocery_template = "{{ url_for('static', filename='groceries.html') }}"
 </script>
 <script type="text/javascript" src="{{ url_for('static', filename='search.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='list.js') }}"></script>
-<!--<script>-->
-<!--      $('#getgroc').click(function() {-->
-<!--//        $('#getgroc').html('<img src="{{ url_for("static", filename="loading.gif") }}>');-->
-<!--         $('#getgroc').html('<img src="{{ url_for('static', filename='loading.gif') }}">');-->
-<!--//        $('#getgroc').html('<img src="{{ url_for('static', filename='loading.gif') }}">');-->
-<!--        list = $('#list');-->
-<!--        if (list.children().length > 0){-->
-<!--            $('.list-group').append("<li class='list-group-item'>"+input.val()+"</li>");-->
-<!--            // clear input and typehead-->
-<!--            input.val('');-->
-<!--            $('.typeahead').typeahead('val', '');-->
-<!--        }-->
-
-<!--    });-->
-<!--</script>-->

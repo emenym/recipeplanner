@@ -9,6 +9,12 @@ $(document).ready(function(){
                 input.val('');
                 $('#hidden_match').val('false')
                 $('.typeahead').typeahead('val', '');
+                $('#userinput').css('color', '#495057');
+                $("#userinput").focus();
+            }else{
+                $('#userinput').css('color', 'red');
+                $("#userinput").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+                $("#userinput").focus();
             }
         }
 
@@ -20,15 +26,18 @@ $(document).ready(function(){
     }
     });
 
-
+    $('.printm| ge').click(function(){
+         $("#grocerytable").print();
+    });
 
 });
 
 function get_groceries(gifurl) {
+//    console.log($('#getgroc').html());
     $('#getgroc').html('<img src ='+gifurl+'>');
     recipelist = [];
     $( "#list li"  ).each(function( index ) {
-        console.log( index + ": " + $( this ).text() );
+//        console.log( index + ": " + $( this ).text() );
         recipelist.push($( this ).text())
     });
 
@@ -38,7 +47,24 @@ function get_groceries(gifurl) {
     type: "POST",
     data: JSON.stringify({recipes: recipelist}),
     contentType: "application/json; charset=utf-8",
-    success: function(dat) { console.log(dat); }
-});
+    success: function(dat) {
+
+            $('#getgroc').html('Get Grocery List');
+//            console.log(dat);
+            if (jQuery.isEmptyObject(dat.groceries)){
+                $("#userinput").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+                $("#userinput").focus();
+                return;
+            }
+            var grocerylist = $("<div id=grocerylist></div>");
+            $('#content').append(grocerylist)
+            $('#grocerylist').load(grocery_template, function(){
+                $.each(dat.groceries, function(key, val) {
+                    var row = $("<tr><td>"+key+"</td><td>"+val.qty+"</td><td>"+val.unit+"</td></tr>");
+                    $('#grocerytable tbody').append(row);
+                 });
+            });
+         }
+    });
 
 }
