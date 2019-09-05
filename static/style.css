@@ -52,14 +52,3 @@ canvas {
     margin-left: 10px;
 
 }
-
-
-@media print {
-    *, :after, :before {
-      color: #000!important;
-      text-shadow: none!important;
-      background: 0 0!important;
-      -webkit-box-shadow: none!important;
-      box-shadow: none!important;
-    }
-}

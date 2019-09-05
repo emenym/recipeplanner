@@ -26,11 +26,14 @@ $(document).ready(function(){
     }
     });
 
-    $('.printme').click(function(){
+    $('#printme').click(function(){
          $("#grocerytable").print();
     });
 
 });
+function printData() {
+    window.print();
+}
 
 function get_groceries(gifurl) {
     $('#getgroc').html('<img src ='+gifurl+'>');

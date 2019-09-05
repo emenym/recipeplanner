@@ -1,0 +1,14 @@
+@media print{
+    *, :after, :before {
+      color: #000!important;
+      text-shadow: none!important;
+      background: 0 0!important;
+      -webkit-box-shadow: none!important;
+      box-shadow: none!important;
+    }
+
+    #userinput { display: none !important; }
+    #content > div.container { display: none !important; }
+    #printme { display: none !important; }
+  }
+}
