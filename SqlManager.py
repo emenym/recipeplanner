@@ -35,7 +35,6 @@ def get_groceries(recipe_id):
             "AND UOM_Tbl.Descr != %s"
 
     result = execute_query(query, [recipe_id, "CommentLine"])
-    print_result(result)
     return result
 
 
